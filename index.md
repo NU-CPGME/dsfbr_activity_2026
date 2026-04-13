@@ -216,6 +216,15 @@ To check if your job is queued, running, or finished, you can use the following 
 squeue --me
 ```
 
+If you want to watch the status updates of the program, you can use the following command:
+
+```
+tail -f spades.out
+```
+
+To stop viewing the file, hit Control - c.
+
+
 **Outputs**
 
 All of the output files can be found in the `SA_spades` folder. There are a lot of files in there, so we're just going to pick a few of the most relevant to describe.
