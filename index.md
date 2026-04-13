@@ -3,7 +3,7 @@
 # Microbial Genomics In-Class Activity
 
 ### DGP-485 Data Science for Biomedical Researchers
-**April 9, 2025**
+**April 13, 2026**
 
 *Egon A. Ozer, MD PhD (<e-ozer@northwestern.edu>)*  
  
@@ -12,7 +12,7 @@
 ### Introduction 
 In this exercise we will assemble the whole genome sequence of an isolate of the bacterium *Staphyloccus aureus* from Illumina short reads, assess the assembly quality, identify antibiotic resistance markers, and determine variants relative to a reference genome sequence.
 
-We will perform all these tasks on Quest using Conda / Mamba. For a nice introduction to Conda, see [here](https://www.dataschool.io/intro-to-conda-environments/) or [here](https://docs.conda.io/projects/conda/en/latest/index.html) for more detail. For more information about using Mamba or Conda on Quest specifically, take a look at [this page](https://services.northwestern.edu/TDClient/30/Portal/KB/ArticleDet?ID=2064).
+We will perform all these tasks on Quest using Conda / Mamba. For a nice introduction to Conda, see [here](https://www.dataschool.io/intro-to-conda-environments/) or [here](https://docs.conda.io/projects/conda/en/latest/index.html) for more detail. For more information about using Mamba or Conda on Quest specifically, take a look at [this page](https://rcdsdocs.it.northwestern.edu/tutorials/software-management/conda-mamba-quest/mamba-conda-quest.html).
 
 > <img src="img/warn.png" width="25"> You can also install Mamba or Conda on your personal computer (all of the analyses in this exercise can easily be done on a laptop). I recommend Mamba or Micromamba as the installation of software packages into environments with Mamba tends to be much faster and smoother than with Conda or Anaconda. See [here](https://mamba.readthedocs.io/en/latest/installation/mamba-installation.html) for more information on installing Mamba or Micromamba. If you install Conda and/or Mamba on you computer you do not need to load it as a module.  
 
@@ -27,6 +27,26 @@ File browsers allow you to access and browse remote filesystems (like Quest) and
 <img src="img/cyberduck-icon-384.png" width="40"/>[Cyberduck](https://cyberduck.io/) (This one is pretty, but will ask you for money)
 
 <img src="img/95988_filezilla_icon.png" width="40">[FileZilla](https://filezilla-project.org/) (This one is free)
+
+#### Connecting filezilla to Quest
+
+**Steps:**
+
+1. Open the Site Manager by clicking the icon in the top left of the window
+
+2. Click the "New site" button
+
+3. Change the Protocol to "SFTP - SSH File Transfer Protocol"
+
+4. Enter the Host as "login.quest.northwestern.edu"
+
+5. Set Logon Type to "Ask for password" and enter your NetID as the User (NOT "Your NetID")
+
+6. Click "Connect" and enter your NetID password when prompted
+
+
+<img src="img/filezilla_login.png" width="80%">
+
 
 ### 1. Logging into Quest and activating the environment  
 
@@ -85,13 +105,13 @@ module load mamba
 conda activate /projects/e30682/MicrobialWGS/conda_envs/assembly_env
 ```
 
-> <img src="img/warn.png" width="25"> If this is the first time you've used Mamba or Conda on Quest, you'll probably get an error message here. The following commands will get it working for you, after which you can rerun the command *b2* above. You'll only need to run these two commands once and Conda/Mamba should work for you every time you use them on Quest going forward.
+> <img src="[def]" width="25"> If this is the first time you've used Mamba or Conda on Quest, you'll probably get an error message here. The following commands will get it working for you, after which you can rerun the command *b2* above. You'll only need to run these two commands once and Conda/Mamba should work for you every time you use them on Quest going forward.
 > ```
 > conda init bash
 > source ~/.bashrc
 > ```
 
-> <img src="img/warn.png" width="25"> If you want to recreate this environment in your home directory or on your own computer, you can copy the `assembly_environment.yaml` file from the `/projects/e30682/MicrobialWGS/conda_envs` directory and create the environment using the `mamba env create -f assembly_environment.yaml` command. 
+> <img src="[def]" width="25"> If you want to recreate this environment in your home directory or on your own computer, you can copy the `assembly_environment.yaml` file from the `/projects/e30682/MicrobialWGS/conda_envs` directory and create the environment using the `mamba env create -f assembly_environment.yaml` command. 
 
 
 ### 2. Perform quality trimming of the sequencing reads
@@ -138,7 +158,7 @@ Files | Description
 Now we'll generate a _de novo_ whole genome assembly from our trimmed reads. For this we'll use the assembler [SPAdes](https://cab.spbu.ru/software/spades/) ([Github site](https://github.com/ablab/spades)).  
 
 
-> <img src="img/warn.png" width="25"> This step takes too many resources and is too slow to do in the login node. We'll submit a Slurm batch script for this instead.
+> <img src="[def]" width="25"> This step takes too many resources and is too slow to do in the login node. We'll submit a Slurm batch script for this instead.
 
 ```
 nano spades.sh
@@ -390,3 +410,6 @@ conda deactivate
 ---
 
 <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="img/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+
+
+[def]: mg/warn.pn
