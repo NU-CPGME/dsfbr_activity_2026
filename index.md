@@ -60,22 +60,22 @@ Where `<NETID>` is replaced with your NetID (such as `abc123` for example).
 
 Then enter your NetID password and hit Enter.
 
-**a. Create a working folder**
+**1A. Create a working folder**
 
-1. Make a symlink (a.k.a. an alias) to the class project folder in your home directory (`~`) on Quest if haven't already. This will help us locate the outputs in FileZilla later
+1A-1. Make a symlink (a.k.a. an alias) to the class project folder in your home directory (`~`) on Quest if haven't already. This will help us locate the outputs in FileZilla later
 
 ```
 cd ~
 ln -s /projects/e30682
 ```
 
-2. To get to the project folder, use the `cd` (change directory) command followed by the path to the exercise folder
+1A-2. To get to the project folder, use the `cd` (change directory) command followed by the path to the exercise folder
 
 ```
 cd /projects/e30682/MicrobialWGS
 ```
 
-3. In this folder, create a folder for yourself with the `mkdir` (make directory) command.
+1A-3. In this folder, create a folder for yourself with the `mkdir` (make directory) command.
 
 Again: `<NETID>` should be replaced with your NetID
 
@@ -83,13 +83,13 @@ Again: `<NETID>` should be replaced with your NetID
 mkdir <NETID>
 ```
 
-4. Move into your folder:
+1A-4. Move into your folder:
 
 ```
 cd <NETID>
 ```
 
-5. Ensure you are in your folder by using the `pwd` (present working directory) command
+1A-5. Ensure you are in your folder by using the `pwd` (present working directory) command
 
 ```
 pwd
@@ -98,21 +98,21 @@ pwd
 The output of the command should be `/projects/e30682/MicrobialWGS/<NETID>`
 
 
-**b. Load the Mamba module on Quest and activate the pre-made environment** 
+**1B. Load the Mamba module on Quest and activate the pre-made environment** 
 
-1. This first command loads Quest's `mamba` module.
+1B-1. This first command loads Quest's `mamba` module.
 
 ```
 module load mamba
 ```  
 
-2. Now activate the pre-made mamba environment called `assembly_env`
+1B-2. Now activate the pre-made mamba environment called `assembly_env`
 
 ```
 conda activate /projects/e30682/MicrobialWGS/conda_envs/assembly_env
 ```
 
-> <img src="[def]" width="25"> If this is the first time you've used Mamba or Conda on Quest, you'll probably get an error message here. The following commands will get it working for you, after which you can rerun the command *b2* above. You'll only need to run these two commands once and Conda/Mamba should work for you every time you use them on Quest going forward.
+> <img src="img/warn.png" width="25"> If this is the first time you've used Mamba or Conda on Quest, you'll probably get an error message here. The following commands will get it working for you, after which you can rerun the command *b2* above. You'll only need to run these two commands once and Conda/Mamba should work for you every time you use them on Quest going forward.
 > ```
 > conda init bash
 > source ~/.bashrc
