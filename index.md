@@ -160,12 +160,15 @@ Files | Description
 `SA_trimmed_unpaired_1.fastq.gz` & `_2.fastq.gz` | Unpaired reads remaining after trimming 
 `SA_fastp.html` | Filtering and trimming report. Can view with a web browser
 
+
+Use FileZilla to download the `SA_fastp.html` file from Quest. It can be found in `/projects/e30682/MicrobialWGS/<NETID>` (replace `<NETID>` with your NetID). Open the file to view it in your default web browser.
+
 ## 3. Assemble with SPAdes
 
 Now we'll generate a _de novo_ whole genome assembly from our trimmed reads. For this we'll use the assembler [SPAdes](https://cab.spbu.ru/software/spades/) ([Github site](https://github.com/ablab/spades)).  
 
 
-> <img src="[def]" width="25"> This step takes too many resources and is too slow to do in the login node. We'll submit a Slurm batch script for this instead.
+> <img src="img/warn.png" width="25"> This step takes too many resources and is too slow to do in the login node. We'll submit a Slurm batch script for this instead.
 
 ```
 nano spades.sh
@@ -311,6 +314,8 @@ Files | Description
 `report.pdf` | A pdf version of the assembly report
 `report.tsv` | A tab-separated version of the report table that can be viewed in a spreadsheet program like Excel or in a text editor
 
+Download `report.html` using FileZilla and open it to view it in your web browser. 
+
 ## 6. Identify antimicrobial resistance genes and mutations with AMRFinder
 
 [AMRFinder](https://www.ncbi.nlm.nih.gov/pathogens/antimicrobial-resistance/AMRFinder/) is a tool and database developed by NCBI to identify antimicrobial resistance (AMR) genes, resistance-associated point mutations, and select other classes of genes from assembled nucleotide sequence. 
@@ -339,7 +344,7 @@ _Outputs_
 
 Files | Description
 --- | ---
-`SA_amrfinder.txt` | A report file that can be downloaded and opened in Excel
+`SA_amrfinder.txt` | A report file that can be downloaded using FileZilla and opened in Excel
 
 [More detail about output format](https://github.com/ncbi/amr/wiki/Running-AMRFinderPlus#output-format)
 
@@ -417,6 +422,3 @@ conda deactivate
 ---
 
 <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="img/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
-
-
-[def]: mg/warn.pn
