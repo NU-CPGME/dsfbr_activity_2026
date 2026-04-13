@@ -62,20 +62,20 @@ Then enter your NetID password and hit Enter.
 
 **1A. Create a working folder**
 
-1A-1. Make a symlink (a.k.a. an alias) to the class project folder in your home directory (`~`) on Quest if haven't already. This will help us locate the outputs in FileZilla later
+1\. Make a symlink (a.k.a. an alias) to the class project folder in your home directory (`~`) on Quest if haven't already. This will help us locate the outputs in FileZilla later
 
 ```
 cd ~
 ln -s /projects/e30682
 ```
 
-1A-2. To get to the project folder, use the `cd` (change directory) command followed by the path to the exercise folder
+2\. To get to the project folder, use the `cd` (change directory) command followed by the path to the exercise folder
 
 ```
 cd /projects/e30682/MicrobialWGS
 ```
 
-1A-3. In this folder, create a folder for yourself with the `mkdir` (make directory) command.
+3\. In this folder, create a folder for yourself with the `mkdir` (make directory) command.
 
 Again: `<NETID>` should be replaced with your NetID
 
@@ -83,13 +83,13 @@ Again: `<NETID>` should be replaced with your NetID
 mkdir <NETID>
 ```
 
-1A-4. Move into your folder:
+4\. Move into your folder:
 
 ```
 cd <NETID>
 ```
 
-1A-5. Ensure you are in your folder by using the `pwd` (present working directory) command
+5\. Ensure you are in your folder by using the `pwd` (present working directory) command
 
 ```
 pwd
@@ -100,13 +100,13 @@ The output of the command should be `/projects/e30682/MicrobialWGS/<NETID>`
 
 **1B. Load the Mamba module on Quest and activate the pre-made environment** 
 
-1B-1. This first command loads Quest's `mamba` module.
+1\. This first command loads Quest's `mamba` module.
 
 ```
 module load mamba
 ```  
 
-1B-2. Now activate the pre-made mamba environment called `assembly_env`
+2\. Now activate the pre-made mamba environment called `assembly_env`
 
 ```
 conda activate /projects/e30682/MicrobialWGS/conda_envs/assembly_env
