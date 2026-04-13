@@ -62,13 +62,20 @@ Then enter your NetID password and hit Enter.
 
 **a. Create a working folder**
 
-1. To get to the project folder, use the `cd` (change directory) command followed by the path to the exercise folder
+1. Make a symlink (a.k.a. an alias) to the class project folder in your home directory (`~`) on Quest if haven't already. This will help us locate the outputs in FileZilla later
+
+```
+cd ~
+ln -s /projects/e30682
+```
+
+2. To get to the project folder, use the `cd` (change directory) command followed by the path to the exercise folder
 
 ```
 cd /projects/e30682/MicrobialWGS
 ```
 
-2. In this folder, create a folder for yourself with the `mkdir` (make directory) command.
+3. In this folder, create a folder for yourself with the `mkdir` (make directory) command.
 
 Again: `<NETID>` should be replaced with your NetID
 
@@ -76,13 +83,13 @@ Again: `<NETID>` should be replaced with your NetID
 mkdir <NETID>
 ```
 
-3. Move into your folder:
+4. Move into your folder:
 
 ```
 cd <NETID>
 ```
 
-4. Ensure you are in your folder by using the `pwd` (present working directory) command
+5. Ensure you are in your folder by using the `pwd` (present working directory) command
 
 ```
 pwd
@@ -111,7 +118,7 @@ conda activate /projects/e30682/MicrobialWGS/conda_envs/assembly_env
 > source ~/.bashrc
 > ```
 
-> <img src="[def]" width="25"> If you want to recreate this environment in your home directory or on your own computer, you can copy the `assembly_environment.yaml` file from the `/projects/e30682/MicrobialWGS/conda_envs` directory and create the environment using the `mamba env create -f assembly_environment.yaml` command. 
+> <img src="img/warn.png" width="25"> If you want to recreate this environment in your home directory or on your own computer, you can copy the `assembly_environment.yaml` file from the `/projects/e30682/MicrobialWGS/conda_envs` directory and create the environment using the `mamba env create -f assembly_environment.yaml` command. 
 
 
 ### 2. Perform quality trimming of the sequencing reads
